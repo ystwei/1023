@@ -1,0 +1,6 @@
+1.src:source code
+2.unicode=utf-8=utf8
+3.\u000A:´ú±í¿Õ
+4.×ª»»:Convert
+5.mul-media
+6.NAN:not a number

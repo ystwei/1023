@@ -1,0 +1,17 @@
+1。byte=8bit
+2.作业：实例：短路运算符和按位运算符的区别
+3.作业：扩展赋值运算符和赋值运算符区别
+4.作业：三目（闰年）
+5.初始化：init~
+6.原始类型primitive：stack
+            byte,short,int,long
+            float,double
+            char
+            boolean
+7.引用类型reference：stack (heap-GC)
+8statement:语句
+ <>[]
+9.作业：三角形，梯形，矩形，正方形，圆形3.14，的面积
+10.当基本类型做形参的时候，形参传递的是值。
+
+

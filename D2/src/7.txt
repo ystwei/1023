@@ -1,0 +1,8 @@
+1.util：实用
+2.越界：ArrayIndexOutOfBoundsException
+3.作业：手写二分
+4.作业：电影院
+5.作业：小孩
+11891.12
+     
+   1  6 

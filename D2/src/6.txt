@@ -1,0 +1,15 @@
+1.原始类型：只有 stack primitive type:
+  byte short int long 
+  float double
+  char 
+  boolean
+2.引用类型（reference type）：heap和 stack都存在。
+3.专业：professional
+4.数组一旦创建，堆不能改变，快。
+  ArrayList： 随时改变大小，慢，方便
+5.for each只能读，不能写，性能好
+  for，即读又写，性能差
+6.NullPointerException:空指针异常
+7作业：找出数组中最大的值
+8.作业：矩阵加减乘
+  
