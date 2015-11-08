@@ -1,1 +1,17 @@
 1.eclipse--IBM
+2.类的三大特征（
+	封装:encapsulation
+	继承：inheritance:inherXXX
+	多态：polymorphism:polyXXX(MultiXXX)
+	
+）
+3.instanceXXX:实例
+4.static->特征->property->attribute->global variable->field
+  dynamic->行为->method->procedure->function
+5.assignment:赋值
+8.作业：Student->name,no,sex,old,address,password：,
+  getter setter
+     需要实例化出来，并且输出所有的属性
+9.modifiers:修饰符(private [default]        public )
+10.Syntax：语法
+11.constructor:构造器

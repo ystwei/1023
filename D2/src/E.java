@@ -1,17 +1,16 @@
 public class E{
-	public static void main(String [] args){
-		
+	int age=100;//属性，Attribute,Property
+	
+	public static void main(String [] args){//函数-》方法(method)		
 		int a[]={1,4,2,6,10,11,8};
 		int start=0;
 		int end =a.length-1;
 		quickSort(a,start,end);
 		for(int i :a){
 			System.out.println(i);
-		}
-		
+		}		
 	}
-	public static void quickSort(int [] a,int start ,int end){
-		
+	public static void quickSort(int [] a,int start ,int end){		
 		int i=start;
 		int j=end;
 		if(i>=j){
