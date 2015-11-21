@@ -1,0 +1,22 @@
+1.重载：在同一个类中，方法的名称相同，形参不同(个数，顺序，类型)，overload
+2.重写：当子类继承父类，
+3.Object类下常用的方法：toString,getClass,finilize(),clone(),notify(),notifyAll(),
+hashCode(),wait(),equals,
+4.visit modifiers:访问修饰符：private  [default]    protected  public
+5.作业：自己写程序，测试4个访问修饰符是否符合PPT的列表
+6.final类 最终类不能被继承
+  final变量：不能被改变
+  final方法：不能被重写
+7.有抽象方法的类一定是抽象类。
+     抽象类不能实例化
+8.作业：抽象类实现车速.
+                 抽象类实现不同图像（circle，square）的面积和周长
+  C++ Virtual Class
+9.接口和抽象类的区别：
+  a.接口的方法都是抽象的，抽象类可以有一般方法
+  b.接口的方法都是公共的，抽象类均可
+  c.接口里面的变量一定是常量，抽象类均可
+10.接口为啥存在，解决的是：java是单根继承的缺陷
+   接口可以多继承，
+   类和接口的关系式实现，类是先继承在实现 
+  
