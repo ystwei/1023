@@ -1,0 +1,6 @@
+1.重载：在同一个类中，方法的名称相同，形参不同(个数，顺序，类型)，overload
+2.重写：当子类继承父类，
+3.Object类下常用的方法：toString,getClass,finilize(),clone(),notify(),notifyAll(),
+hashCode(),wait(),equals,
+4.visit modifiers:访问修饰符：private  [default]    protected  public
+5.作业：自己写程序，测试4个访问修饰符是否符合PPT的列表
