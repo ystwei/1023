@@ -1,0 +1,10 @@
+1.Math.random()[0,1),double
+2.Random类
+3. ISO8859-1<gb2312<GBK<GB18030<UTF-8(unicode)
+   String s=new String("你好".getBytes("ISO8859-1"),"utf-8");
+4.作业：挨个实验concat,trim,indexOf,lastIndexOf,startsWith,endsWith,valueOf
+  equals,equalsIgnoreCase,compareTo,
+5.作业："A C D"去掉中间空格
+6.regex:正则表达式， regular
+  
+  
