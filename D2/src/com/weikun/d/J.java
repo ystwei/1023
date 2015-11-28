@@ -2,6 +2,12 @@ package com.weikun.d;
 import java.util.*;
 public class J {
 	//随机生成元素，存数组的元素必须不同的三种写法
+	/*
+	 * 
+	 * OK1:传统写法
+	 * Ok2：时间复杂度最低的写法，但是空间太大
+	 * OK3：递归写法，上课递归没完成的写法
+	 */
 	public void ok2(){
 		char a[]=new char[10];
 		char r='a';
