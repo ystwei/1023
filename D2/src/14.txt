@@ -1,0 +1,43 @@
+1.包装类，引用类型，有堆有栈
+  Byte Short Integer Long
+  Float Double
+  Character 
+  Boolean
+2.作业，克隆：浅克隆，深克隆（Cat->House）
+3.异常
+     错误：不能避免，
+4.ArithmeticException
+  NullPointerException
+  ArrayIndexOutOfBoundsException
+      数组     索引       溢出      范围          异常
+  ClassNotFoundException
+  ClassCastException
+  EOFException
+  FileNotFoundException
+  SocketException
+  NumberFormatException
+  SQLExcpetion
+  NoSuchMethodExcpetion
+5.try---catch--catch--finally:被动，捕获，代码中
+  throw : 主动，一个异常，且在代码中
+  throws:主动，多个异常，且在方法
+5.作业：自定义异常 三大特性，覆盖写出圆和正方形面积不能大于100，的r和a分别是多少
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
