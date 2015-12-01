@@ -9,6 +9,8 @@ import java.io.Writer;
 public class B {
 	public static void main(String[] args) {
 		new B().copy();
+		
+		
 	}
 	public void copy(){
 		Reader r=null;
