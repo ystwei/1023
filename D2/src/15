@@ -1,3 +1,11 @@
 1.如果我要把文件的内容存储到硬盘中，用的是O(W) -outputXXX
 2.如果我要把硬盘的文件显示出来，用的是I(R)-inputXXX
-3.作业：拷贝文件，并且显示拷贝的时间
+3.作业：拷贝文件，并且显示拷贝的时间,Scanner System.in inputStreamReader  bufferedXXX
+4.1.fileInputStream
+    fileOutputStream
+    Reader writer filereader filewriter 
+    bufferedreader bufferedFileInputStream bufferWriter bufferedFileOutputStream
+    Scanner System.in inputStreamReader 
+    RandomAccessFile
+5.作业：练习递归写指定目录下的文件。
+    
