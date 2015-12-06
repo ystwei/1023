@@ -2,3 +2,5 @@
 2.作业：写个最小栈
 3.作业：写个dj双栈
 4.作业：手写顺序队列(length,remove,add,empty,toString,clear)
+5.作业：链式单向队列(length,remove,add,empty,toString,clear,element)
+6.作业：链式双向队列()
