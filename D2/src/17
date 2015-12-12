@@ -4,3 +4,5 @@
 3.作业：ArrayList 遍历写出5种遍历
 4.作业：用List实现打开冰箱
 5.作业：购物车
+6.hashtable：父亲是dictionary,没有null键，没有null值，速度慢，线程synchronized
+  hashmap：父亲是abstractmap,可以有null键，可以有null值,线程not synchronized
