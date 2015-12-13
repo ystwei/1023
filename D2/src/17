@@ -1,5 +1,4 @@
 1Arrays:一旦定义了，就不能改变长度
-
 2LinkedList:
 3.作业：ArrayList 遍历写出5种遍历
 4.作业：用List实现打开冰箱
