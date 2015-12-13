@@ -16,6 +16,7 @@ public class A {
 			Object a=c.newInstance();//对象反射
 			
 			
+			
 			Field name=c.getDeclaredField("name");
 			name.setAccessible(true);
 			name.set(a, "金鱼");
