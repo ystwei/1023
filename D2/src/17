@@ -6,3 +6,28 @@
 5.作业：购物车
 6.hashtable：父亲是dictionary,没有null键，没有null值，速度慢，线程synchronized
   hashmap：父亲是abstractmap,可以有null键，可以有null值,线程not synchronized
+7.regex regular
+  x:合法字符
+  \n:换行
+  \r:回车
+  \t:制表
+  \uXXXX:unicode
+  \xXXXX:十六进制
+  +:一次或多次
+  *:零次或多次
+  ?:零次或一次
+  []:表示枚举，
+  ():子表达式
+  .:除了\n之外的所有单字符
+  {}:频度
+  \:转义
+  |:或
+  $:结束
+  ^:开始
+ 8.作业：反射：非默认构造器反射，默认构造器反射
+   方法反射
+   字段反射
+  
+  
+  
+  
