@@ -2,3 +2,9 @@
 2.进程：process
 3Thread Runnable
 4.Interrupt:sleep,wait,join
+19:6:00
+26:5.30
+27:5.30
+29:5.30
+
+5.方法：run start stop setPriority setName sleep join yield 
