@@ -1,0 +1,4 @@
+1.线程：Thread
+2.进程：process
+3Thread Runnable
+4.Interrupt:sleep,wait,join
