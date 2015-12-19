@@ -6,5 +6,7 @@
 26:5.30
 27:5.30
 29:5.30
-
-5.方法：run start stop setPriority setName sleep join yield 
+5.方法：run start stop setPriority setName sleep join yield setDaemon
+6.Timer,TimerTask
+7.synchronized,asynchronized
+8.作业：线程同步，线程通信
