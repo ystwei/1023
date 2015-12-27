@@ -1,0 +1,8 @@
+1.单子模式,Singleton (4种)，作用。
+2.门面模式，facade
+3.适配器Adapter，类，对象的
+4.工厂模式：简单工厂模式，工厂方法模式，抽象工厂 Factory
+5.观察者模式：Observer 
+6.命令者模式:command
+7.装饰者模式：Decorator
+8.代理模式：proxy
