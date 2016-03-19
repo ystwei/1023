@@ -20,6 +20,10 @@ public class A {
 			conn=DriverManager.getConnection("jdbc:mysql://192.168.1.112/bz?useUnicode=true&characterEncoding=utf-8", 
 					"root","root");			
 			//3.Ö´ÐÐSQLÓï¾ä
+			
+			
+			
+			
 			String sql="select * from products ";
 			pstmt=conn.prepareStatement(sql);			
 			rs=pstmt.executeQuery();
