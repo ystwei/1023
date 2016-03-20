@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="2.html" method="get" name="form1">
+	用户名：<input type="text" id="username" name="username"/><br/>
+	密码：<input type="password" id="pwd" name="pwd"/><br/>
+	性别：
+	男<input type="radio" name="sex" id="sex" value="male"/>
+	女<input type="radio" name="sex" id="sex" value="female"/>
+	<br/>
+	你喜欢的演员
+	林允<input type="checkbox" id="actor" name="actor"  value="lin"/>
+	宋中基<input type="checkbox" id="actor" name="actor"  value="song"/>
+	金星<input type="checkbox" id="actor" name="actor"  value="jin"/>
+	<br/>
+	你所在的城市
+	<select id="city" name="city">
+		<optgroup label="东北">
+			<option value="haerb">
+				哈尔滨
+			</option>
+			<option value="cc">
+				长春
+			</option>
+			<option value="sy">
+				沈阳
+			</option>		
+		</optgroup>		
+		<optgroup label="华北">
+			<option value="sjz">
+				石家庄
+			</option>
+			<option value="zz">
+				郑州
+			</option>
+			<option value="zjk">
+				张家口
+			</option>		
+		</optgroup>
+	</select>
+	<br/>
+	你的简历	
+	<textarea rows="10" cols="10" name="jl"></textarea>
+	<br/>
+	<input type="hidden" value="henni"/>
+	<br/>
+	你的照片：<input type="file" name="pic" id="pic"/>
+	<input type="image" src="images/1.gif"/>
+	<input type="button" value="按钮"/>
+	<input type="submit" value="提交"/>
+	<button>按钮</button>
+	</form>
+</body>
+</html>

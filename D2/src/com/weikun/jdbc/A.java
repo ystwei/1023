@@ -32,20 +32,10 @@ public class A {
 				rs=cs.getResultSet();
 				
 				while(rs.next()){
-					System.out.println(rs.getFloat("o.item_price")+"----"+rs.getString("p.prod_name"));
-					
-				}
-				
-				
+					System.out.println(rs.getFloat("o.item_price")+"----"+rs.getString("p.prod_name"));					
+				}							
 				hasresult=cs.getMoreResults();
-			}
-			
-			
-			
-			
-			
-			
-			
+			}			
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
