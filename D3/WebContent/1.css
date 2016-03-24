@@ -1,0 +1,6 @@
+
+	a:link {color: red} /* 未访问的链接 */
+	a:visited {color: blue} /* 已访问的链接 */
+	a:hover {color: green;font-size: 30px} /* 当有鼠标悬停在链接上 */
+	a:active {color: pink} /* 被选择的链接 */	
+	
