@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function test(){
+		var v=window.document.getElementById("username").value;
+		if(v==""){
+			alert('用户名必须输入！');
+			
+		}
+	
+		
+	}
+	
+	function test1(){
+		
+ 		var v=window.document.getElementsByName("password")[0].value; 		
+ 		if(v==""){
+ 			alert('密码必须输入！');			
+ 		} 		
+ 		var v1=document.form1.repassword.value;
+ 		if(v1==""){
+ 			alert('再次输入密码必须输入！');			
+ 		}
+		if(v!=v1){
+			alert('密码必须相同！');
+		}		
+	}
+	function test2(){
+		
+		var size= document.getElementsByName("type").length;
+		for(var i=0;i<size;i++){
+			if(document.getElementsByName("type")[i].checked){//勾选
+				
+				alert(document.getElementsByName("type")[i].value);
+			}
+			
+		}
+		
+		
+	}
+	
+	function test3(){
+		
+		var size= document.getElementById("interest").options.length;
+		
+		for(var i=0;i<size;i++){
+			
+			if(document.getElementById("interest").options[i].selected){//选中
+				alert(document.getElementById("interest").options[i].value);
+			}
+		}
+		
+	}
+	
+	
+	function test4(){
+		
+		var size= document.getElementsByName("city").length;
+		
+		for(var i=0;i<size;i++){
+			
+			if(document.getElementsByName("city")[i].checked){//选中
+				alert(document.getElementsByName("city")[i].value);
+			}
+		}
+		
+	}
+</script>
+</head>
+<body>
+	<form name="form1" method="post" action="1.html" id="form1" onsubmit="alert('ok')">
+			姓名：<input type="text"  name="username" id="username"/><br/>
+			密码：<input type="password" name="password" id="password"/><br/>
+			再次输入密码：<input type="password" name="repassword"/><br/>
+			用户类型：<input type="radio" name="type" value="1" checked="checked" id="type"/>管理员
+				   <input type="radio" name="type" value="2"  id="type"/>一般用户
+				   <br/>
+			你喜欢的城市:
+			<input type="checkbox" name="city" id="city" value="1">北京
+			<input type="checkbox" name="city" id="city" value="2">哈尔滨
+			<input type="checkbox" name="city" id="city" value="3">长春		
+    <br/>
+			爱好：
+			<select name="interest" id="interest">
+				<option value="999" >请选择你喜欢的球类</option><br/>
+				<option value="bask" >篮球</option>
+				<option value="foot" selected="selected">足球</option>
+				<option value="voli">排球</option>
+			</select><br/>		
+		<input type="button" value="取得用户名的第一种方法" onclick="test()"/><br/>
+		<input type="button" value="取得用户名的第二种方法" onclick="test1()"/><br/>
+		<input type="button" value="取得权限的方法" onclick="test2()"/><br/>
+		<input type="button" value="取得兴趣的方法" onclick="test3()"/><br/>
+		<input type="button" value="取得城市的方法" onclick="test4()"/><br/>
+		<input type="reset" value="重置"/><br/>
+		<input type="button" value="提交" onclick="alert('ok22');form1.submit()"/><br/>
+		<input type="submit" value="提交1">
+		
+		
+		</form>
+		<script type="text/javascript">
+			function over(){
+				
+				document.all.tip.style.display="block";
+			}
+			
+			function out(){
+				
+				document.all.tip.style.display="none";
+			}
+		
+		</script>
+		<a href="" onmouseover="over()" onmouseout="out()">罗</a>
+		<br/>
+		
+		<div id="tip" style="display:none" >
+			<table>
+				<tr>
+					<td>
+						<img alt="" src="images/1.gif">
+					
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span>老罗</span>
+					
+					</td>
+				</tr>
+			</table>
+		
+		
+		</div>
+		
+</body>
+</html>

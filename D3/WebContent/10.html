@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function  ok(i,s){		
+		alert(i);
+		alert(s);
+		return i+s;
+	}
+	function ok1(s){
+		alert(s);
+	}
+
+</script>
+</head>
+<body onunload="alert('unload')" >
+	<form id="form1" name="form1" action="1.html" method="get" 
+	onsubmit="alert('submit')">
+	用户名：<input type="text" id="username" name="username"><br/>
+	密码：<input type="text" id="pwd" name="pwd" >
+	<input type="button" value="点击" onclick="alert('click')"/>
+	<a href=""  onmouseover="alert('over')" onmouseout="alert('out')">测试</a>
+	
+	<input type="submit" value="提交">
+	</form>
+	
+</body>
+</html>

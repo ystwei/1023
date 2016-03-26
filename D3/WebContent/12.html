@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		var i;
+		function openW(){
+			i=window.open("1.html","title","toolbar=no,status=yes,width=400,height=100");
+		}
+		function closeW(){
+			i.close();
+		}
+		
+		function closeM(){
+			window.close();
+		}
+	
+	</script>
+	
+
+</head>
+<body onunload="alert('unload')">
+	<input type="button" value="打开窗口" onclick="openW()"/>
+	<input type="button" value="关闭窗口" onclick="closeW()"/>
+	<input type="button" value="关闭主窗口" onclick="closeM()"/>
+	<input type="button" value="对话框1" onclick="alert('ok')"/>	
+	<input type="button" value="对话框2" onclick="alert(confirm('确定来吗？'))"/>
+	<input type="button" value="对话框3" onclick="alert(prompt('你的媳妇叫啥？','吴奇隆'))"/>
+	<a href="1.html">跳转</a>
+	
+	<input type="button" value="跳转" onclick="window.location='1.html'"/>
+	
+</body>
+</html>

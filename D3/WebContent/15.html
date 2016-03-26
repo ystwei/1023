@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+.warn {
+	border: 1px solid red;
+	color: red
+}
+
+#test {
+	width: 400px;
+	margin: 100px auto;
+	padding: 3px
+}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		function checkNumber(e){
+			var key=window.event?e.keyCode:e.which;//键盘的ASCII码
+			var key1=String.fromCharCode(key);
+			
+			var reg=/\d/;
+			
+			var re=reg.test(key1);
+			if(re==false){//成功
+				document.all.test.className="warn";
+			}else{
+				document.all.test.className="";
+			}
+		}
+	
+	
+	</script>
+	<div id="test">
+		请输入数字： <input type="text" 
+			onkeypress="return checkNumber(event)"
+			style="ime-mode: Disabled;" /> <span id="msg">请正确输入数字</span> <input
+			type="text" name="username" />
+
+	</div>
+</body>
+</html>
