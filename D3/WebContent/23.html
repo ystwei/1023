@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function Animal(){
+		this.go=function(){			
+			alert('Animal-go');			
+		}
+	}
+	function Dog(){
+		this.mark=function(){			
+			alert('Dog-mark');			
+		}
+		Animal.apply(this,arguments);//继承
+	}
+	//Dog.prototype=new Animal();
+	var dog=new Dog();
+	dog.go();	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

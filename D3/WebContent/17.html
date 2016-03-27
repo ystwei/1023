@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function test(name){
+		name[0]="她";
+		
+	}
+	function test2(i){//整数类型，浮点类型，
+		
+		i="ABCD";
+	}
+	
+	function test3(b){
+		
+		b[3]="四";
+		
+	}
+	var b=new Array("一","二","三");
+	test3(b);
+	alert(b);
+	
+// 	var a=new Array("我","爱","你");//,Array,字符串（常量的值是不变的，她传进去的仍然是地址）
+// 	test(a);
+// 	alert(a[0]);
+// 	//以上就是传递的是地址，因此是引用传递
+// 	var j="EFGH";
+// 	test2(j);
+// 	alert(j);
+// 	//以上就是传递的是值，因此是值传递
+</script>
+</head>
+<body>
+
+</body>
+</html>

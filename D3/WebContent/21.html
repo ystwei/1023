@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function Animal(name,age,sex1){
+		var sex=sex1;
+		this.name=name;
+		this.age=age;
+		this.getOld=function(){
+			return this.age;			
+		}
+		this.setOld=function(age){
+			this.age=age;			
+		}		
+	}
+	var a=new Animal("狗",10,"male");
+	//a.setOld(20);
+	alert(a.getOld());
+	Animal.prototype.email="wk2003119@163.com";	
+	Animal.prototype.go=function(address){
+		alert("我准备去"+address);
+	};
+	a.go("桂林");
+	alert(a.email);
+	
+</script>
+	
+	
+	
+
+
+
+</head>
+<body>
+
+</body>
+</html>

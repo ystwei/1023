@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function ok(x,y,z,k,l,m){
+		x(y,z,k);
+		k(l,m);		
+	}	
+	var param=function(y,z,k){
+		alert(y+z);		
+	}		
+	var param1=function(l,m){
+		alert(l+m); 		
+	}	
+	//ok(param,100,200,300);	
+	ok(param,100,200,param1,4,5);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

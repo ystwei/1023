@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function Animal(){
+	}
+	Animal.prototype={			
+		name:"狗",
+		old:10,
+		setName:function(name){			
+			this.name=name;
+		},
+		getName:function(){			
+			return this.name;
+		},
+		print:function(){
+			this.setName("猫");
+			alert(this.getName());			
+		}
+	}
+	var a=new Animal();
+	a.print();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

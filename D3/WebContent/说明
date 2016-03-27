@@ -1,0 +1,21 @@
+var 
+if  else if
+switch
+case
+break
+default
+for
+while 
+do while
+JSON[{key:value},{}]
+onchange onfoucus onblur onmouseover onmouseout onkeypress
+onload onunload onclick onsubmit onkeyup onkeydown onenter
+document.vlink alink link title lastModified open() window.close() setInterval(,) parseInt parseFloat getElementsByName getElementById checked selected display:none,block
+/\d/.test() 
+e.keyCode e.which String.fromCharCode()
+
+
+function ok(){}//正常函数
+var o=function(){}//函数变量
+
+
