@@ -16,10 +16,19 @@
 	
 	<%
 		pageContext.setAttribute("key2", "ok");//page
+		
+		pageContext.getRequest().setAttribute("key4", "ok4");//reqeust
+		
+		
+		pageContext.getSession().setAttribute("key5", "ok5");//session
+		
+		pageContext.getServletContext().setAttribute("key6", "ok6");//application
+	
+		request.setAttribute("key3", "ok3");
 	
 	%>
-	
-	<%@include file="91.jsp" %>
+
+	jsp:<jsp:include page="91.jsp"></jsp:include>
 	
 </body>
 </html>

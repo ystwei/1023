@@ -10,5 +10,30 @@
 	<%=
 		pageContext.getAttribute("key2")
 	%>
+	<%=
+		request.getAttribute("key3")
+	%>
+	<%=
+		request.getAttribute("key4")
+	%>
+	
+	<%=
+			pageContext.getAttribute("key4", PageContext.REQUEST_SCOPE)
+	%>
+		
+			
+	
+	<%=
+		session.getAttribute("key5")
+	%>
+	
+	<%=pageContext.getAttribute("key5", PageContext.SESSION_SCOPE)
+	%>
+	
+	<%=
+		application.getAttribute("key6")
+	%>
+	<%=pageContext.getAttribute("key6", PageContext.APPLICATION_SCOPE)
+	%>
 </body>
 </html>
