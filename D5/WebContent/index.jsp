@@ -20,23 +20,31 @@
 		//是否存储到cookie
 		if(document.getElementById("sun").checked){
 			//删除cookie
-// 			 var exp = new Date(); 
-// 			 exp.setTime(exp.getTime() - 1); 
-// 			 var cval=getCookie(name); 
-// 			 if(cval!=null) 
-// 			        document.cookie= name + "="+cval+";expires="+exp.toGMTString(); 
-			
-			
 			var Days = 7; 
 		    var exp = new Date(); 
-		    exp.setTime(exp.getTime() + Days*24*60*60*1000); 		    
-		    document.cookie =  "username="+ username +" ;password="+pwd+" ;expires=" + exp.toGMTString(); 
-		    alert(document.cookie);
-		   // document.cookie =  " password="+pwd+" ;expires=" + exp.toGMTString();
+		    exp.setTime(exp.getTime() + Days*24*60*60*1000); 	
+		    document.cookie = " username="+ username +" ,password="+pwd+" ;expires=" + exp.toGMTString(); 
 		}
 		document.all.form1.submit();
 	}
-
+	function del(){
+	    var exp = new Date();
+	    exp.setTime(exp.getTime() - 1);
+	    var cval=getCookie("username");
+	    var cval1=getCookie("password");
+	    document.cookie= "username="+cval+";expires="+exp.toGMTString();
+	    document.cookie= "password="+cval1+";expires="+exp.toGMTString();
+		
+	}
+	//取cookies函数 
+	function getCookie(name){ 
+		
+	    var arr=document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)")); 
+	    if(arr!=null){ 
+	        return unescape(arr[2]); 
+	    } 
+	    return null; 
+	} 
 </script>
 </head>
 <body>
@@ -48,10 +56,12 @@
 		<input type="checkbox" id="sun"/>是否记住密码(7天)
 		<input type="button" value="提交" onclick="ok()"/>
 	</form>
+		<input type="button" value="删除" onclick="del()"/>
 	<script type="text/javascript">
 		document.write(document.cookie);
-		var username=document.cookie.split(";")[1].split("=")[1];
-		var password=document.cookie.split(";")[0].split("=")[1];
+		document.write(document.cookie.split(",")[0].split(";")[1]);
+		var username =document.cookie.split(",")[0].split("=")[1];
+		var password =document.cookie.split(";")[0].split(",")[1].split("=")[1];
 		document.all.form1.username.value=username;
 		document.all.form1.pwd.value=password;
 		document.all.form1.sun.checked=true;
