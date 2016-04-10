@@ -48,9 +48,9 @@
 </script>
 </head>
 <body>
-	<h1>登录我的系统--milestone</h1>
-	
-	<form action="checkuser.jsp" id="form1" name="form1">
+
+	<h1>登录我的系统--milestone</h1>	
+	<form action="checkuser1.jsp" id="form1" name="form1">
 		用户名：<input type="text" id="username" name="username"/><br/>
 		密码：<input type="text" id="pwd" name="pwd"/><br/>
 		<input type="checkbox" id="sun"/>是否记住密码(7天)
@@ -59,8 +59,8 @@
 		<input type="button" value="删除" onclick="del()"/>
 	<script type="text/javascript">
 		document.write(document.cookie);
-		document.write(document.cookie.split(",")[0].split(";")[1]);
-		var username =document.cookie.split(",")[0].split("=")[1];
+		
+		var username =document.cookie.split(";")[0].split(",")[0].split("=")[1];
 		var password =document.cookie.split(";")[0].split(",")[1].split("=")[1];
 		document.all.form1.username.value=username;
 		document.all.form1.pwd.value=password;

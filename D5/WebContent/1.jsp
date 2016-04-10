@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- 	<h1>成功了:欢迎你<%=session.getAttribute("username") %></h1> --%>
-	<h1>成功了:欢迎你${sessionScope.username}</h1> 
+
 </body>
 </html>

@@ -55,7 +55,7 @@ public class UserDAOImpl implements IUserDAO {
 					e.printStackTrace();
 				}
 			}
-			DB.close();
+			//DB.close();
 		}		
 		return flag;
 	}
