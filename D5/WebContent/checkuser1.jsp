@@ -18,6 +18,4 @@
 </c:if>
 <c:if test="${!service.login(user)}">
 	<c:redirect url="error.jsp"></c:redirect>
-
-
 </c:if>
