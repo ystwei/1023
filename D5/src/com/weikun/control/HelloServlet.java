@@ -52,6 +52,7 @@ public class HelloServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String page=request.getParameter("page");
 		
+		
 		request.setAttribute("key", "OK");
 		
 		//servletÐ­×÷
