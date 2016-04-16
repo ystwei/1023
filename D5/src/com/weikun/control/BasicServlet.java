@@ -20,8 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 initParams={
 		@WebInitParam(name="FIRST",value="first.jsp"),
-		@WebInitParam(name="SECOND",value="second.jsp")
-		
+		@WebInitParam(name="SECOND",value="second.jsp")		
 	})
 public class BasicServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
