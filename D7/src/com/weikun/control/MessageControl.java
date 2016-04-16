@@ -18,6 +18,7 @@ import com.weikun.vo.Message;
 @WebServlet(name="/messageControl",urlPatterns={"/message"})
 public class MessageControl extends HttpServlet {
 	private IMessageService service=new MessageServiceImpl();
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
