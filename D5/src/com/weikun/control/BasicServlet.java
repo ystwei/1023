@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class BasicServlet
  */
 @WebServlet(name="/BasicServlet",urlPatterns={"/h4","/h5"},
+
 initParams={
 		@WebInitParam(name="FIRST",value="first.jsp"),
 		@WebInitParam(name="SECOND",value="second.jsp")
