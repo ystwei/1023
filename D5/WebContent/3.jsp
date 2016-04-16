@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>SECOND</h2>
-	<%=request.getAttribute("key") %>
-	<%=session.getAttribute("key") %>
+	<a href="h4?key=first">测试Servlet</a>
+	<a href="h5?key=second">测试Servlet</a>
 </body>
 </html>

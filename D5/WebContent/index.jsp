@@ -50,7 +50,7 @@
 <body>
 
 	<h1>登录我的系统--milestone</h1>	
-	<form action="checkuser1.jsp" id="form1" name="form1">
+	<form action="user" id="form1" name="form1">
 		用户名：<input type="text" id="username" name="username"/><br/>
 		密码：<input type="text" id="pwd" name="pwd"/><br/>
 		<input type="checkbox" id="sun"/>是否记住密码(7天)

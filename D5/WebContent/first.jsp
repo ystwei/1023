@@ -9,5 +9,6 @@
 <body >
 	<h2>FIRST</h2>
 	<%=request.getAttribute("key") %>
+	<%=session.getAttribute("key") %>
 </body>
 </html>

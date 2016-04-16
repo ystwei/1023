@@ -9,7 +9,7 @@ public class DB {
 	public static Connection getConnection(){		
 		try {
 			Class.forName("org.gjt.mm.mysql.Driver");
-			conn=DriverManager.getConnection("jdbc:mysql://192.168.0.104:3306/test?useUnicode=true&characterEncoding=utf-8", 
+			conn=DriverManager.getConnection("jdbc:mysql://192.168.0.132:3306/test?useUnicode=true&characterEncoding=utf-8", 
 					"root", "root");
 			
 			

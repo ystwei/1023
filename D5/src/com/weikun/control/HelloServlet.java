@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class HelloServlet
@@ -59,7 +60,6 @@ public class HelloServlet extends HttpServlet {
 		RequestDispatcher dispatcher=request.getRequestDispatcher(map.get(page.toUpperCase()));
 		dispatcher.forward(request, response);
 		//response.sendRedirect(map.get(page.toUpperCase()));//Ìø×ª
-		
 		
 		
 //		response.setContentType("text/html");
