@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -122,9 +122,16 @@
 							<li class="divider-vertical hidden-phone hidden-tablet"></li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown"> 
+										
+										<c:if test="${empty sessionScope.user}">
 										<img src="img/user_avatar.png" alt="请登录" class="user_avatar" /> 
 										游客
+										</c:if>
 										
+										<c:if test="${!empty sessionScope.user}">
+											<img src="user?action=readpic&id=${sessionScope.user.id}" alt="请登录" class="user_avatar" /> 
+											${sessionScope.user.username}
+										</c:if>
 									<b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li><a data-toggle="modal" id="my" 
@@ -326,7 +333,7 @@
 		$(function() {
 			var username = $.cookie('papaoku'); // 获得cookie
 			var password = $.cookie('papaokp');
-
+		
 			$('#username').val(username);//设置文本框
 			$('#password').val(password);
 			//选中
@@ -523,15 +530,6 @@
 			    
 			      
 				$('#span_title').html(data.title);//添加主贴标题
-			     
-			     
-				
-			    
-			    
-			    
-			   
-			      
-			     
 				 
 			  });
 			 
@@ -619,16 +617,9 @@
 			if(document.getElementById("file0").files.length==0){
 				document.getElementById("sticky_a5").click();
 				return ;
-			}
-		      
-			
-			
-			
+			}			
 			document.all.File_form.submit();
-			
-
-		}
-		
+		}		
 		
 	</script>
 

@@ -20,7 +20,7 @@
 						<a href="javascript:void(0)" id="sticky_a10"></a>
 				</div>
 				<div class="modal-body" data-backdrop="static">
-					<form method="post" action="" name="login_form"
+					<form method="post" action="user?action=login" name="login_form"
 						id="login_form">
 
 

@@ -40,6 +40,11 @@
 			<artifactId>c3p0</artifactId>
 			<version>0.9.5-pre8</version>
 		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>D8</finalName>

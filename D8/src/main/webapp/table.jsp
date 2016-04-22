@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div id="contentwrapper">
 	<div class="main_content">
 		<%@include file="top.jsp" %>
@@ -9,12 +10,12 @@
 			<div class="span12">
 				<h3 class="heading">快来灌水</h3>
 
-				
-					<div class="alert alert-error">
-						<a class="close" data-dismiss="alert">×</a> <strong>操作信息:</strong>
-						
-					</div>
-				
+					<c:if test="${ !empty requestScope.error}">
+						<div class="alert alert-error">
+							<a class="close" data-dismiss="alert">×</a> <strong>操作信息:${requestScope.error}</strong>
+							
+						</div>
+					</c:if>
 
 					<div class="btn-group sepH_b">
 						<button data-toggle="dropdown" class="btn dropdown-toggle">
