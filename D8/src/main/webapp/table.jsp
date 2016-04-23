@@ -48,11 +48,11 @@
 						</tr>
 					</thead>
 					<tbody>
-
+							<c:forEach varStatus="status" items="${requestScope.alist}" var="a">
 						
 								<tr>
 
-									<td></td>
+									<td>${status.count}</td>
 									<td><a href="upload/.jpg"
 										
 										title="" class="cbox_single thumbnail">
@@ -106,7 +106,7 @@
 									</td>
 										
 								</tr>
-							
+							</c:forEach>
 					</tbody>
 				</table>
 

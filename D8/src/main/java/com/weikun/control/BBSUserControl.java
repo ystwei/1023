@@ -1,5 +1,6 @@
 package com.weikun.control;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -12,6 +13,11 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.fileupload.FileItemIterator;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import com.weikun.service.BBSUserServiceImpl;
 import com.weikun.service.IBBSUserService;
@@ -53,19 +59,68 @@ public class BBSUserControl extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//仅仅是控制登录的
-		String action=request.getParameter("action");
-		switch (action) {
-		case "login":
-			login(request, response);
-			break;
-		case "readpic":
-			readpic(request, response);
-			break;	
-		default:
-			break;
+		//是否是二进制的形式上传
+		boolean flag=ServletFileUpload.isMultipartContent(request);
+		if(flag){
+			//取得tomcat路径
+			String tpath=request.getServletContext().getRealPath("/");
+			//存放视频和文件的临时目录,file.separator：文件夹分隔符
+			String tmpath=""+System.getProperty("file.separator")+"tmpdir";
+			File tf=new File(tmpath);
+		
+			if(!tf.isDirectory()){
+				tf.mkdir();
+			}
+			
+			DiskFileItemFactory df=new DiskFileItemFactory();
+			df.setRepository(tf);//设置上传文件的临时目录
+			df.setSizeThreshold(1024*1024*1024);//设置缓冲区大小
+			
+			ServletFileUpload su=new ServletFileUpload(df);
+			su.setFileSizeMax(1024*5000);
+			su.setSizeMax(1024*100000);
+			try {
+				FileItemIterator fi=su.getItemIterator(request);
+				uploadPic(tpath,fi);
+				
+				//完成注册，需要跳转
+				request.setAttribute("error", "注册成功！");
+				RequestDispatcher dispatcher=null;
+				dispatcher=request.getRequestDispatcher("show.jsp");
+				dispatcher.forward(request, response);
+				
+			} catch (FileUploadException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+		}else{
+			String action=request.getParameter("action");
+			
+			switch (action) {
+			case "login":
+				login(request, response);
+				break;
+			case "readpic":
+				readpic(request, response);
+				break;	
+				
+			default:
+				break;
+			}
 		}
 		
+		
+		
+	}
+
+	private void uploadPic(String tpath,FileItemIterator fi) {
+		// TODO Auto-generated method stub
+		//判断是否form表单上传的是大的二进制流
+		BBSUser user=service.uploadPic(tpath,fi);
+		
+		service.register(user);
 		
 	}
 
@@ -124,7 +179,7 @@ public class BBSUserControl extends HttpServlet {
 		}else{
 			request.setAttribute("error", "用户名和密码错误，请重新登录！");
 		}
-		dispatcher=request.getRequestDispatcher("show.jsp");
+		dispatcher=request.getRequestDispatcher("article?action=query");
 		dispatcher.forward(request, response);
 	}
 

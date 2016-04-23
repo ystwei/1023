@@ -1,9 +1,14 @@
 package com.weikun.dao;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.weikun.db.DruidDB;
+import com.weikun.vo.Article;
 import com.weikun.vo.BBSUser;
 
 public class BBSUserDAOImpl implements IBBSUserDAO {
@@ -109,5 +114,49 @@ public class BBSUserDAOImpl implements IBBSUserDAO {
 		
 		return is;
 	}
+
+	@Override
+	public void register(BBSUser user) {
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt=null;
+		try {
+			String sql="insert into bbsuser (username,password,pic) values(?,?,?)";
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, user.getUsername());
+			pstmt.setString(2, user.getPassword());
+		
+			
+			//留作存储blob
+			
+			String picpath=user.getPicpath();
+			File file=new File(picpath);
+			
+			FileInputStream fis=new FileInputStream(file);
+			
+			pstmt.setBinaryStream(3, fis, fis.available());
+			
+			
+			
+			
+			pstmt.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally{
+			if(pstmt!=null){
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		
+	}
+
+	
 
 }

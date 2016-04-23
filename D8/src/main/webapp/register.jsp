@@ -12,8 +12,8 @@
 				<div class="modal-body" data-backdrop="static">
 
 					<div class="cnt_b">
-						<form method="post" action="" name="File_form"
-							method="post" enctype="multipart/form-data" id="File_form">
+						<form method="post" action="user" name="File_form"
+							 enctype="multipart/form-data" id="File_form">
 							<div class="formRow">
 								<div class="control-group formSep">
 									<div class="alert alert-info">

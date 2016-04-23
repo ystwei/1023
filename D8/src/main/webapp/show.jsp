@@ -145,17 +145,14 @@
 
 
 									</li>
-
-
+										<c:if test="${!empty sessionScope.user}">
 									
 										<li><a href="#post" title="灌水" data-toggle="modal"
 											id="myp" data-backdrop="static"
 											onclick="javascript:addz();document.getElementById('submenu').innerHTML='灌水'">灌水</a>
 											
-
-
 										</li>
-									
+									</c:if>
 									<li class="divider"></li>
 									<li><a href="loginout.jsp"
 										onclick="javascript:document.getElementById('submenu').innerHTML='${txt_ini}'">退出当前用户</a></li>
