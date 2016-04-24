@@ -102,6 +102,9 @@ public class BBSUserControl extends HttpServlet {
 			case "login":
 				login(request, response);
 				break;
+			case "up":
+				up(request, response);
+				break;
 			case "readpic":
 				readpic(request, response);
 				break;	
@@ -113,6 +116,25 @@ public class BBSUserControl extends HttpServlet {
 		
 		
 		
+	}
+
+	private void up(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		BBSUser user=new BBSUser();
+		user.setId(Integer.parseInt(request.getParameter("id")));
+		user.setPagenum(Integer.parseInt(request.getParameter("row")));
+		service.updatePageNum(user);
+		RequestDispatcher dispatcher=null;
+		dispatcher=request.getRequestDispatcher("article?action=query&page=1");
+		try {
+			dispatcher.forward(request, response);
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private void uploadPic(String tpath,FileItemIterator fi) {
@@ -179,7 +201,7 @@ public class BBSUserControl extends HttpServlet {
 		}else{
 			request.setAttribute("error", "用户名和密码错误，请重新登录！");
 		}
-		dispatcher=request.getRequestDispatcher("article?action=query");
+		dispatcher=request.getRequestDispatcher("article?action=query&page=1");
 		dispatcher.forward(request, response);
 	}
 

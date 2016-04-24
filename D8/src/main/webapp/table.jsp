@@ -16,7 +16,7 @@
 							
 						</div>
 					</c:if>
-
+					<c:if test="${sessionScope.user!=null}">
 					<div class="btn-group sepH_b">
 						<button data-toggle="dropdown" class="btn dropdown-toggle">
 							行数 <span class="caret"></span>
@@ -24,12 +24,12 @@
 						<ul class="dropdown-menu">
 
 
-							<li><a href="UserControl?action=page&row=5&userid=${uid}">默认5行</a></li>
-							<li><a href="UserControl?action=page&row=10&userid=${uid}">每页10行</a></li>
-							<li><a href="UserControl?action=page&row=2&userid=${uid}">每页2行</a></li>
+							<li><a href="user?action=up&row=5&id=${sessionScope.user.id}">默认5行</a></li>
+							<li><a href="user?action=up&row=10&id=${sessionScope.user.id}">每页10行</a></li>
+							<li><a href="user?action=up&row=2&id=${sessionScope.user.id}">每页2行</a></li>
 						</ul>
 					</div>
-
+					</c:if>
 
 				
 
@@ -48,7 +48,8 @@
 						</tr>
 					</thead>
 					<tbody>
-							<c:forEach varStatus="status" items="${requestScope.alist}" var="a">
+							<c:set value="${requestScope.pb}" var="pb"></c:set>
+							<c:forEach varStatus="status" items="${pb.data}" var="a">
 						
 								<tr>
 
@@ -57,7 +58,7 @@
 										
 										title="" class="cbox_single thumbnail">
 
-											<img src="UserControl?action=pic&id="
+											<img src="user?action=readpic&id=${a.userid}"
 											alt="" style="height: 50px; width: 50px" />
 
 									</a>
@@ -69,17 +70,11 @@
 									
 									
 									<a
-										href=""></a>
-										
-									
-									
-									
-									
-									
+										href="">${a.title}</a>
 									
 									</td>
-									<td></td>
-									<td></td>
+									<td>${a.content}</td>
+									<td>${a.datetime}</td>
 									<td>
 											
 										<!-- 没登陆，游客 uid=0 -->
@@ -97,12 +92,8 @@
 											<!-- 是本人贴可以删除和修改 -->
 											
 											<a
-												href=""
+												href="article?action=delete&id=${a.id}"
 												title="删除本帖"><i class="icon-trash"></i></a>
-
-										
-										
-										
 									</td>
 										
 								</tr>

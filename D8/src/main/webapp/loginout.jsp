@@ -3,6 +3,6 @@
 <%
 
 	session.invalidate();
-	response.sendRedirect("show.jsp");
+	response.sendRedirect("article?action=query&page=1");
 
 %>

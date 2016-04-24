@@ -10,5 +10,6 @@ public interface IBBSUserDAO {
 	public BBSUser login(BBSUser user);
 	public InputStream readPIC(int id) ;
 	public void register(BBSUser user);
+	public void updatePageNum(BBSUser user);
 
 }

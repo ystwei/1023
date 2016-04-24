@@ -9,6 +9,6 @@
         
     </head>
 <body>
-	<% response.sendRedirect("article?action=query"); %>
+	<% response.sendRedirect("article?action=query&page=1"); %>
 </body>
 </html>

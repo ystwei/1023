@@ -157,6 +157,37 @@ public class BBSUserDAOImpl implements IBBSUserDAO {
 		
 	}
 
+	@Override
+	public void updatePageNum(BBSUser user) {
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt=null;
+		try {
+			String sql="update bbsuser set pagenum=? where id=? ";
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, user.getPagenum());
+			pstmt.setInt(2, user.getId());		
+			
+			pstmt.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}finally{
+			if(pstmt!=null){
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		
+		
+	}
+
 	
 
 }

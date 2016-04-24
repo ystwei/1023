@@ -130,6 +130,11 @@ public class BBSUserServiceImpl implements IBBSUserService {
 		// TODO Auto-generated method stub
 		dao.register(user);
 	}
+	@Override
+	public void updatePageNum(BBSUser user) {
+		// TODO Auto-generated method stub
+		dao.updatePageNum(user);
+	}
 	
 
 }

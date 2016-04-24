@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.weikun.service.ArticleServiceImpl;
 import com.weikun.service.IArticleService;
 import com.weikun.vo.Article;
+import com.weikun.vo.BBSUser;
+import com.weikun.vo.PageBean;
 
 /**
  * Servlet implementation class ArticleControl
@@ -43,16 +45,27 @@ public class ArticleControl extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		RequestDispatcher dispatcher=null;
-		String action=request.getParameter("action");
+		String action=request.getParameter("action");	
+		
+		PageBean pb=null;
 		switch (action) {
 		case "query":
-			List<Article> list=service.queryArticles();
-			request.setAttribute("alist", list);
+			String page=request.getParameter("page");
+			int userid= request.getSession().getAttribute("user")==null?999:((BBSUser)request.getSession().getAttribute("user")).getId();
+			pb=service.queryArticles(Integer.parseInt(page),userid);
+			
+			
 			break;
-
+		case "delete":
+			String id=request.getParameter("id");
+			pb=service.deleteArticle(Integer.parseInt(id));
+		
+			 
+			break;
 		default:
 			break;
 		}
+		request.setAttribute("pb", pb);
 		dispatcher=request.getRequestDispatcher("show.jsp");
 		dispatcher.forward(request, response);
 		

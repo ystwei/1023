@@ -13,5 +13,6 @@ public interface IBBSUserService {
 	public InputStream readPIC(int id) ;
 	public void register(BBSUser user) ;
 	public BBSUser uploadPic(String tpath,FileItemIterator fi);
+	public void updatePageNum(BBSUser user) ;
 	
 }
