@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yst>
+	<student id="01">	 
+		<name>
+			李刚		
+		</name>
+		<address>
+			哈尔滨
+		</address>	 	
+	</student>
+	<student id="02">
+		<name>
+			王平
+		</name>
+		<address>
+			长春
+		</address>
+	</student>
+</yst>
+
