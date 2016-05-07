@@ -16,6 +16,7 @@ public class UserControl extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		this.doGet(req, resp);
+		
 	}
 	
 	@Override
