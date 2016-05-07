@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+	
+	$(function(){
+		
+		
+		$("#btn1").click(function(){
+			
+// 			$("#ok").load("msg.jsp",$("[name=form1]").serialize(),function(responseText){
+				
+				
+// 				alert('完成了！');
+// 			});
+			$.post("msg.jsp",$("[name=form1]").serialize(),function(responseTxt){				
+				
+				$("#ok").html(responseTxt);
+			});
+			
+		});
+		
+	});
+	
+	
+
+	
+
+</script>
+</head>
+<body>
+	<span id="ok"></span>
+	<button id="btn1">点击</button>
+	
+	<form name="form1">
+		<input type="text" name="user" id="username"/>
+		<input type="password" name="pwd" id="pwd"/>
+		男<input type="radio" value="m" name="sex">
+		男<input type="radio" value="f" name="sex">
+		<input type="submit"/>
+	</form>
+</body>
+</html>

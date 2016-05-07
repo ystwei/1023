@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#btn").click(function(){
+			
+			var u=$("#username").val();
+			if(u==""){
+				alert('不能为空！');
+				return;
+			}
+			$.ajax({
+				
+				url:"user",
+				data:"username="+u,
+				dataType:"text",//传字符串
+				type:"post",
+				success:function(data){
+					if(data.indexOf("false")>-1){
+						
+						alert('恭喜你');
+					}else{
+						
+						alert('已经被占用');
+					}
+					
+				}
+				
+				
+				
+			});
+			
+		});
+		
+		
+		
+	});
+</script>
+</head>
+<body>
+	<input type="text" name="username" id="username">
+	<input type="button" id="btn" value="校验"/>
+</body>
+</html>

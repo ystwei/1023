@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+		$("#btn1").click(function(){
+			$("#msg").html( $("[name=form1]").serialize());
+		
+		});
+		$("#btn2").click(function(){
+			var arr=$("[name=form1]").serializeArray();
+			
+			for(index  in arr){
+				alert(arr[index].name+":"+arr[index].value);
+				
+			}
+			
+		
+		});
+	});
+
+</script>
+</head>
+<body>
+	
+	
+	<form name="form1">
+		<input type="text" name="user" id="username"/>
+		<input type="password" name="pwd" id="pwd"/>
+		男<input type="radio" value="m" name="sex">
+		男<input type="radio" value="f" name="sex">
+		<input type="submit"/>
+	</form>
+	<span id="msg"></span>
+	<button id="btn1">点击</button>
+	<button id="btn2">点击Array</button>
+</body>
+</html>
