@@ -1,0 +1,5 @@
+1.加pom jar
+2.加lib jar
+3.复制目录
+4.复制config.xml 更改对应值
+5.更改web。xml

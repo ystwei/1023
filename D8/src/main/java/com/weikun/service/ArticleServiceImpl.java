@@ -19,5 +19,10 @@ public class ArticleServiceImpl implements IArticleService {
 		// TODO Auto-generated method stub
 		return dao.deleteArticle(id);
 	}
+	@Override
+	public PageBean addArticle(Article a) {
+		// TODO Auto-generated method stub
+		return dao.addArticle(a);
+	}
 
 }

@@ -2,6 +2,7 @@ package com.weikun.dao;
 
 import java.io.BufferedReader;
 import java.io.Reader;
+import java.io.StringReader;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -99,6 +100,35 @@ public class ArticleDAOImpl implements IArticleDAO {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, id);
 			return pstmt.executeUpdate()>0?this.queryArticles(1,999):null;
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return null;
+	}
+	@Override
+	public PageBean addArticle(Article a) {
+		// TODO Auto-generated method stub
+		
+		PreparedStatement pstmt=null;
+		String sql="insert into article(title,content,rootid,userid,datetime) "
+				+ "values(?,?,?,?,now())";
+		try {			
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1,a.getTitle() );
+			
+			Reader reader=new  StringReader(a.getContent());
+			pstmt.setCharacterStream(2, reader, a.getContent().length()); //clob
+			
+			
+			
+			
+			pstmt.setInt(3,0);//暂时是0 0代表主贴
+			pstmt.setInt(4,a.getUser().getId() );
+		
+			return pstmt.executeUpdate()>0?this.queryArticles(1,a.getUser().getId()):null;
 			
 			
 		} catch (Exception e) {

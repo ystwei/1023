@@ -62,6 +62,21 @@ public class ArticleControl extends HttpServlet {
 		
 			 
 			break;
+		case "add"://加主贴
+			Article a=new Article();
+			String title=request.getParameter("title");
+			String content=request.getParameter("content");
+			String uid=request.getParameter("userid");
+			BBSUser user=new BBSUser();
+			user.setId(Integer.parseInt(uid));
+			a.setUser(user);
+			a.setTitle(title);
+			a.setContent(content);
+			pb=service.addArticle(a);
+			
+			
+			
+			break;
 		default:
 			break;
 		}

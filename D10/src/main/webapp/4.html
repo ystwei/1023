@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		$("#pro").change(function(){
+			
+			var pro=this.value;			
+			if(pro=="999"){
+				return ;
+			}			
+			
+			$.ajax({
+				data:"pro="+pro,
+				dataType:"text json",//json
+				type:"post",
+				url:"city",
+				success:function(json){		
+					$('#city option').remove();
+					var str="<option value='999'>请选择城市</option>";
+					$('#city').append(str);
+					//解析json
+					$(json).each(function(i){
+						str="<option value='"+json[i].value+"'>"+json[i].name+"</option>";
+						
+						$('#city').append(str);
+					});
+				}				
+			});
+			
+		})
+		
+		
+	});
+
+</script>
+</head>
+<body>
+	<select id="pro" >
+		<option value="999">
+		请选择省份
+		</option>
+		<optgroup label="东北">
+			<option value="hlj">黑龙江省</option>
+			<option value="ln">辽宁省</option>
+		</optgroup>
+		<optgroup label="西北">
+			<option value="sx">陕西省</option>
+			<option value="gs">甘肃省</option>		
+		</optgroup>	
+	</select>
+	所在的城市
+	<select id="city">
+		<option value="999">
+			请选择城市
+		</option>
+	</select>
+</body>
+</html>

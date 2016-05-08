@@ -23,7 +23,7 @@
 
 		<property name="driverClass">com.mysql.jdbc.Driver</property>
 
-		<property name="jdbcUrl">jdbc:mysql://192.168.0.128:3306/bbs?useUnicode=true&amp;characterEncoding=utf-8
+		<property name="jdbcUrl">jdbc:mysql://192.168.7.102:3306/bbs?useUnicode=true&amp;characterEncoding=utf-8
 		</property>
 
 		<property name="user">root</property> 
