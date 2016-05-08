@@ -73,12 +73,7 @@ public class ArticleControl extends HttpServlet {
 			a.setTitle(title);
 			a.setContent(content);
 			pb=service.addArticle(a);
-			
-			
-			
-			
-			
-			
+						
 			break;
 		default:
 			break;
