@@ -76,6 +76,9 @@ public class ArticleControl extends HttpServlet {
 			
 			
 			
+			
+			
+			
 			break;
 		default:
 			break;
