@@ -9,5 +9,8 @@ public class A {
 		 map.put("A", "B");
 		 map.put("A", "C");
 		 System.out.println(map.get("A"));
+		 
+		 
+		 
 	}
 }
