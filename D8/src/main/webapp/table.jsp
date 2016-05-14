@@ -16,7 +16,11 @@
 							
 						</div>
 					</c:if>
+					<c:set var="uid" value="999"/>
+					
+					
 					<c:if test="${sessionScope.user!=null}">
+					<c:set var="uid" value="${sessionScope.user.id}"/>
 					<div class="btn-group sepH_b">
 						<button data-toggle="dropdown" class="btn dropdown-toggle">
 							行数 <span class="caret"></span>
@@ -80,20 +84,21 @@
 										<!-- 没登陆，游客 uid=0 -->
 												
 											<!-- 锚点传值 -->
-											<a href="" title="灌水" data-toggle="modal"
+											<a href="#rshow" title="灌水" data-toggle="modal"
 											id="myp" data-backdrop="static"
-											onclick="rshow(${data.id},${uid},${data.user.id});">
+											onclick="rshow(${a.id},${uid},${a.user.id});">
 												 <i class="icon-eye-open"></i>
 											
 											</a>
-
-											
-										
 											<!-- 是本人贴可以删除和修改 -->
 											
+											<c:if test="${uid==a.user.id}">
+											
+																						
 											<a
 												href="article?action=delete&id=${a.id}"
 												title="删除本帖"><i class="icon-trash"></i></a>
+											</c:if>
 									</td>
 										
 								</tr>

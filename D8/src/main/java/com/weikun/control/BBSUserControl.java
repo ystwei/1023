@@ -86,7 +86,7 @@ public class BBSUserControl extends HttpServlet {
 				//完成注册，需要跳转
 				request.setAttribute("error", "注册成功！");
 				RequestDispatcher dispatcher=null;
-				dispatcher=request.getRequestDispatcher("show.jsp");
+				dispatcher=request.getRequestDispatcher("article?action=query&page=1");
 				dispatcher.forward(request, response);
 				
 			} catch (FileUploadException e) {

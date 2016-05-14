@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div id="rshow" class="modal hide fade">
 
@@ -32,15 +32,17 @@
 
 	</div>
 	<div class="modal-footer">
-		
+			<c:if test="${empty sessionScope.user}">
 			
 			
-			<a class="btn btn-warning" href="#login" title="登录" data-toggle="modal"
-				id="myr" data-backdrop="static" title="登录"
-				onclick="javascript:$('#rshow').modal('hide');document.getElementById('submenu').innerHTML='登录'">登录
-			</a>
+			
+			
+				<a class="btn btn-warning" href="#login" title="登录" data-toggle="modal"
+					id="myr" data-backdrop="static" title="登录"
+					onclick="javascript:$('#rshow').modal('hide');document.getElementById('submenu').innerHTML='登录'">登录
+				</a>
 
-		
+			</c:if>
 	
 			<input type="hidden" id="rshowid" value="" name="rshowid"/>
 			

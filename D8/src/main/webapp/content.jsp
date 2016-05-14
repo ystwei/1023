@@ -13,6 +13,7 @@
 				
 				
 					<input type="hidden" id="postrootaction" name="action" value="add" />
+					<!-- 当rootid有值的时候该贴是从贴，否则该贴是主贴 -->
 					<input type="hidden" id="postrootid" name="rootid" value="" />
 				
 				

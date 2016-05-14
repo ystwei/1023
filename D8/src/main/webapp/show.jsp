@@ -349,21 +349,16 @@
 				document.getElementById("sticky_a2").click();
 				return;
 			}
-
 			document.all.login_form.submit();
-
 		}
 		//删除从贴
-		function del(id,rootid) {
-			 
+		function del(id,rootid) {			 
 			 $.ajax({
 				   	  type: "post",
-					  url: "ArticleControl",	
+					  url: "article",	
 					  data:"action=del&id="+id+"&rootid="+rootid,
 					  dataType: "text json",
 					  success : function(data){	
-						 
-						  
 						 	//刷新从贴
 						  showhuitie($("#postrootid").val(),$('#userid').val(),$('#userid').val(),data);
 					  }
@@ -404,7 +399,7 @@
 		   if($("#postrootaction").val()==='reply'){//回帖使用异步，否则不能定位到model
 			   $.ajax({
 				   type: "post",
-					  url: "ArticleControl",	
+					  url: "article",	
 					  data:"action=reply&title="+$('#title').val()+"&content="+txt+"&rootid="+$("#postrootid").val()+"&userid="+$('#userid').val(),
 					  dataType: "text json",
 					  success : function(data){	
@@ -462,7 +457,7 @@
 		//在model上显示回帖
 		/*
 			//id主贴 
-			//uid:浏览用户id  
+			//uid:登录用户id  
 			//duid:发本帖的用户id
 			//显示回帖,用AJAX技术
 			data:从异步返回来的json
@@ -486,14 +481,18 @@
 			     
 				
 			     //增加删除重贴按钮,浏览用户和本帖用户相同的情况下，才能删除
-			   
-			     if(uid===duid){//字符串是否相等,删除从贴
+			   	
+			     if((uid==data.list[i].userid)||(uid==data.ztuid)){//字符串是否相等,删除从贴或发主贴的人也能删除该从贴
 			    	 footer="<div id='foot"+i+"' > "+			    	    
 			    		"	<a class='btn btn-danger'  href='#' "+
 			     			"onclick='javascript:del("+data.list[i].id+","+data.list[i].rootid+")'>删除 </a>"+
 			     			
 			     			"</div> ";
 						
+			     }else{
+			    	 footer="<div id='foot"+i+"' > "+			    	    
+			    				
+			     			"</div> "; 
 			     }
 			     
 			     
@@ -542,18 +541,19 @@
 			//id主贴 uid:浏览用户  duid:本帖id
 			//显示回帖,用AJAX技术
 			 //把该帖子的id值付给rshow model下的隐藏字段
-			  $("#rshowid").val(id);
+			  $("#rshowid").val(id);//操作的是控件的id号，
 			//把该主帖子的id值付给post model下的隐藏字段，代表该贴是子贴
 			  $("#postrootid").val(id);
 			
 			 $.ajax({
 				  type: "post",
-				  url: "ArticleControl",	
+				  url: "article",	
 				  data:"action=queryid&id="+id,
 				  dataType: "text json",
 				  success : function(data){	
 					  //显示回帖内容，并且显示在model窗体中
 					 showhuitie(id,uid,duid,data);
+					 // alert(data);
 					  
 				  }		  
 	         });

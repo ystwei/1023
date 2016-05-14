@@ -1,0 +1,15 @@
+
+drop procedure  if exists q2;
+DELIMITER //
+create procedure q2(
+	in in_id int,
+	out out_title varchar(100) charset 'utf8'
+)
+begin
+
+	select title into  out_title from article where id=in_id;
+	
+	select * from article where rootid=in_id order by  id desc;
+
+end // 
+DELIMITER ;
