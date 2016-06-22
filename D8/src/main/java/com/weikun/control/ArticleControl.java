@@ -24,6 +24,9 @@ import com.weikun.vo.PageBean;
 public class ArticleControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private IArticleService service=new ArticleServiceImpl();
+    
+    
+    
     /**
      * @see HttpServlet#HttpServlet()
      */
