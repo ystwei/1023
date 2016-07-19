@@ -1,3 +1,4 @@
+package com.weikun.tree;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +23,7 @@ public class TestTreeParent {
 class TreeParent{
 	
 	
-	public static class Node{
+	 static class Node{
 		String data;//该节点的名字
 		int parentIndex;//父节点的索引
 		

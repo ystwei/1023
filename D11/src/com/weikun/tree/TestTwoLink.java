@@ -1,3 +1,4 @@
+package com.weikun.tree;
 
 public class TestTwoLink {
 	/*
